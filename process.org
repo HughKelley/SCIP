@@ -1,0 +1,8 @@
+open dir
+check git
+check next task
+    lecture
+    read
+    exercise
+do next task
+save
