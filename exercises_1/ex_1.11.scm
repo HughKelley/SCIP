@@ -31,6 +31,8 @@
 
 ;; i think this is a little better but it's not totally linear
 
+;; should maybe include a count of the distance between n and 3?
+
 (define (g n)
   (if (< n 3) n
 	  ((calc (- n 1) (- n 2) (- n 3)))))
