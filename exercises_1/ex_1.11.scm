@@ -10,6 +10,8 @@
 ;; if n < 3 then n
 ;; if n > 3 then f(n-1) + 2f(n - 2) + 3f(n-3)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (define (my_function n)
   (if (< n 3)
 	  n
@@ -22,3 +24,16 @@
          (else (+ (f (- n 1)) 
                   (* 2 (f (- n 2))) 
                   (* 3 (f (- n 3))))))) 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; linear recursion
+
+;; i think this is a little better but it's not totally linear
+
+(define (g n)
+  (if (< n 3) n
+	  ((calc (- n 1) (- n 2) (- n 3)))))
+
+(define (calc l m n)
+  (+ (g l) (g m) (g n)))
