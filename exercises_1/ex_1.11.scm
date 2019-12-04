@@ -33,6 +33,43 @@
 
 ;; should maybe include a count of the distance between n and 3?
 
+;; build one that works for 3. 
+
+(define (lin_fun_start n)
+  (if (< n 3 ) n
+	  (lin_fun_end (- n 1))))
+
+(define (lin_fun_end n))
+
+
+;; f(3)
+;; 1 * 2 + 2 * 1 + 3 * 0
+;; 2 + 2 + 0
+;; 4
+
+;; 4
+;; 1 * f(3) + 2 * 2 + 3 * 1
+;; 1 * (1 * 2 + 2 * 1 + 3 * 0) + 2 * 2 + 3 * 1
+;; 1 * (2 + 2 + 0) + 4 + 3
+;; 4 + 4 + 3
+;; 11
+
+;; 5
+;; 1 * f(4) + 2 * f(3) + 3 * f(2)
+;; 1 * (1 * f(3) + 2 * 2 + 3 * 1) + 2 * (1 * 2 + 2 * 1 + 3 * 0) + 3 * (1 * 2 + 2 * 1 + 3 * 0)
+;; 1 * (1 * (1 * 2 + 2 * 1 + 3 * 0) + 2 * 2 + 3 * 1) + 2 * (1 * 2 + 2 * 1 + 3 * 0) + 3 * (1 * 2 + 2 * 1 + 3 * 0)
+;; 1 * (1 * (2 + 2 + 0) + 4 + 3) + 2 * (2 + 2 + 0) + 3 * (2 + 2 + 0)
+;; 1 * (1 * (4) + 4 + 3) + 2 * (4) + 3 * (4)
+;; 1 * ( 4 + 4 + 3) + 8 + 12
+;; 11 + 8 + 12
+;; 31?
+
+;; need to do these expansions on paper, can' type fast or accurately enough. 
+	  
+
+
+
+
 (define (g n)
   (if (< n 3) n
 	  ((calc (- n 1) (- n 2) (- n 3)))))
