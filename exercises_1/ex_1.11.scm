@@ -4,7 +4,6 @@
 ;; Write a procedure that computes f by means of a recursive process.
 ;; Write a procedure that computes f by means of an iterative process. 
 
-
 ;; function
 
 ;; if n < 3 then n
@@ -25,7 +24,6 @@
                   (* 2 (f (- n 2))) 
                   (* 3 (f (- n 3))))))) 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; linear recursion
 
@@ -35,14 +33,11 @@
 
 ;; build one that works for 3. 
 
-(define (lin_fun_start n)
-  (if (< n 3 ) n
-	  (lin_fun_end (- n 1))))
-
-(define (lin_fun_end n))
-
-
-
+;;(define (lin_fun_start n)
+ ;; (if (< n 3 ) n
+;;	  (lin_fun_end (- n 1))))
+;
+;;(define (lin_fun_end n))
 
 ;; f(3)
 ;; 1 * 2 + 2 * 1 + 3 * 0
@@ -67,14 +62,25 @@
 ;; 31?
 
 ;; need to do these expansions on paper, can' type fast or accurately enough. 
-	  
+	 
+;;(define (g n)
+;;  (if (< n 3) n
+;;	  ((calc (- n 1) (- n 2) (- n 3)))))
 
+;;(define (calc l m n)
+;;  (+ (g l) (g m) (g n)))
 
+;;  f(n) = n if n<3 and f(n) = f(n - 1) + 2f(n - 2) + 3f(n - 3) if n> 3.
 
+;; if a b and c are 2, 1, 0
 
-(define (g n)
-  (if (< n 3) n
-	  ((calc (- n 1) (- n 2) (- n 3)))))
+;; the next step is given by 2 + 2 * 1 + 3 * 0
 
-(define (calc l m n)
-  (+ (g l) (g m) (g n)))
+;; or a + 2 * b + 3 * c
+
+(define (foo a b c n)
+  (if (< n 3) a
+	  (foo (+ a (* 2 b) (* 3 c)) a b (- n 1))))
+
+(define (bar n)
+  (foo 2 1 0 n))
