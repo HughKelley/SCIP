@@ -25,4 +25,4 @@
 		(else (+ (pascal (- column 1) row)
 				 (pascal (- column 1) (- row 1))))))
 
-;; works, nice and simple. My notes from looking at a solution helped a lot. Feel like I understand this one throughly
+;; works, nice and simple. My notes from looking at a solution helped a lot. Feel like I understand this one throughly.
